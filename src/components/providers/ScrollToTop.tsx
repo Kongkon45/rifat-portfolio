@@ -1,0 +1,35 @@
+"use client";
+import React, { useState } from "react";
+import ScrollToTop from "react-scroll-to-top";
+import { ArrowUp, ChevronsUp } from "lucide-react";
+
+const ScrollToTopComponent = () => {
+  const [hoverIcon, setHoverIcon] = useState(false);
+  return (
+    <div>
+      <ScrollToTop
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          border: "2px solid #FF7639",
+          background: "white",
+          padding: "5px",
+          zIndex: 100,
+        }}
+        smooth
+        component={
+          hoverIcon ? (
+            <ArrowUp className="w-[30px] h-[30px] text-[#2D3D4D]" />
+          ) : (
+            <ChevronsUp  className="w-[30px] h-[30px] text-[#2D3D4D]" />
+          )
+        }
+        onMouseEnter={()=>setHoverIcon(true)}
+        onMouseLeave={()=>setHoverIcon(false)}
+      />
+    </div>
+  );
+};
+
+export default ScrollToTopComponent;
