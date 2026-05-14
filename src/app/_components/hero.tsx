@@ -285,7 +285,7 @@ const HeroSection = () => {
           transition={{ duration: 3, repeat: Infinity }}
           className="mt-1 text-[7px] md:text-[8px] font-black tracking-[0.8em] text-slate-400 uppercase select-none"
         >
-          Explore Now
+          Explore More
         </motion.span>
       </motion.div>
     </motion.section>
