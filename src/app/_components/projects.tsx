@@ -44,7 +44,7 @@ const projects = [
       "A refined showcase for creative work with polished visuals, case study storytelling, and interactive micro UX.",
     tags: ["Portfolio", "Design", "Animation", "Branding"],
     imageLabel: "Creative case study",
-    liveUrl: "#",
+    liveUrl: "/",
     codeUrl: "#",
     accent: "from-fuchsia-500 via-pink-500 to-rose-500",
   },
