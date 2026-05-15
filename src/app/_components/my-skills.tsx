@@ -99,7 +99,7 @@ const MySkillsSection = () => {
   return (
     <section
       id="my-skills"
-      className="w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 py-24 px-6 overflow-hidden"
+      className="w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 py-24 px-6 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl">
 
@@ -111,7 +111,7 @@ const MySkillsSection = () => {
           viewport={{ once: true, amount: 0.5 }}
           variants={headingVariants}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white">
             My{" "}
             <span className="text-orange-500 italic">Skills</span>
           </h2>
@@ -138,8 +138,8 @@ const MySkillsSection = () => {
               >
                 <div
                   className={`
-                    relative flex flex-col h-full rounded-2xl bg-white
-                    border border-slate-100 border-b-4 ${config.border}
+                    relative flex flex-col h-full rounded-2xl bg-white dark:bg-slate-900
+                    border border-slate-100 dark:border-slate-700 border-b-4 ${config.border}
                     shadow-md hover:shadow-xl ${config.glow}
                     transition-shadow duration-300 p-7
                     overflow-hidden
@@ -162,12 +162,12 @@ const MySkillsSection = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  <h3 className="text-xl font-bold text-slate-950 dark:text-white mb-3">
                     {skill.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                  <p className="text-slate-500 dark:text-slate-300 text-sm leading-relaxed flex-1">
                     {skill.desc}
                   </p>
                 </div>

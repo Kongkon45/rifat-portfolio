@@ -21,10 +21,13 @@
   }
 }
 
-body{
-  @apply bg-white
+body {
+  @apply min-h-screen bg-white text-slate-900 antialiased transition-colors duration-300;
 }
 
+html.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
 
 
 @layer base {

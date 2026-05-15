@@ -67,7 +67,7 @@ const AboutMeSection = () => {
   return (
     <motion.section
       id="about"
-      className="w-full bg-white py-20 px-6 overflow-hidden"
+      className="w-full bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -156,14 +156,14 @@ const AboutMeSection = () => {
           {/* Right: Text Content */}
           <motion.div variants={fadeIn} className="space-y-8">
             <div className="relative inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white">
                 About <span className="text-orange-500">Me</span>
               </h2>
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500/50 to-violet-500/50 rounded-full" />
             </div>
 
-            <div className="bg-[#FFF8F6] border border-orange-100/50 rounded-[40px] p-8 md:p-12 shadow-sm">
-              <p className="text-slate-600 text-lg leading-relaxed md:text-xl">
+            <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-8 md:p-12 shadow-sm">
+              <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed md:text-xl">
                 I&apos;m a passionate UI/UX Designer who solves real-world problems through user-centered design. I focus on creating simple, intuitive, and visually engaging digital experiences. By understanding user behavior and business goals, I design solutions that not only look good but also deliver meaningful results. I&apos;m always exploring new ideas and refining my process to create better, more impactful designs.
               </p>
             </div>
@@ -183,7 +183,7 @@ const AboutMeSection = () => {
                 variants={fadeIn}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <Card className={`rounded-[32px] border-none ${item.bg} shadow-sm overflow-hidden`}>
+                <Card className={`rounded-[32px] border-none ${item.bg} shadow-sm overflow-hidden dark:bg-slate-900`}>
                   <CardContent className="p-8 flex flex-col items-center text-center">
                     <div className={`p-4 rounded-full bg-white shadow-sm mb-6 ${item.color}`}>
                       <Icon className="w-8 h-8" />

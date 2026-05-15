@@ -13,7 +13,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const ContactUsSection = () => {
   return (
-    <section id="contact" className="relative w-full py-10 md:py-14 overflow-hidden bg-[#F8FAFC]">
+    <section id="contact" className="relative w-full py-10 md:py-14 overflow-hidden bg-[#F8FAFC] dark:bg-slate-950">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-green-50/50 blur-[100px] rounded-full" />
@@ -74,33 +74,33 @@ const ContactUsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-[24px] p-4 md:p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50"
+              className="bg-white dark:bg-slate-900 rounded-[24px] p-4 md:p-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50 dark:border-slate-800"
             >
               <form className="space-y-4">
                 {/* Name */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-500">Name</label>
+                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Name</label>
                   <Input
                     placeholder="enter your name"
-                    className="h-14 rounded-xl bg-[#FFF8F6] border border-[#FFEDE9] text-gray-800 placeholder:text-gray-400 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                    className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-500">Email</label>
+                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Email</label>
                   <Input
                     placeholder="you@gmail.com"
-                    className="h-14 rounded-xl bg-[#FFF8F6] border border-[#FFEDE9] text-gray-800 placeholder:text-gray-400 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
+                    className="h-14 rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 px-5 focus-visible:ring-1 focus-visible:ring-orange-200"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-500">Message</label>
+                  <label className="text-sm font-medium text-slate-600 dark:text-slate-300">Message</label>
                   <Textarea
                     placeholder="Tell me about your project..."
-                    className="min-h-[120px] rounded-xl bg-[#FFF8F6] border border-[#FFEDE9] text-gray-800 placeholder:text-gray-400 p-5 focus-visible:ring-1 focus-visible:ring-orange-200 resize-none"
+                    className="min-h-[120px] rounded-xl bg-[#FFF8F6] dark:bg-slate-900 dark:border-slate-700 border border-[#FFEDE9] text-slate-900 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500 p-5 focus-visible:ring-1 focus-visible:ring-orange-200 resize-none"
                   />
                 </div>
 
