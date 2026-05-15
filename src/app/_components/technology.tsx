@@ -87,7 +87,7 @@ const tools: Tool[] = [
 
 export default function TechnologySection() {
   return (
-    <section id="technology" className="relative w-full py-24 overflow-hidden bg-white">
+    <section id="technology" className="relative w-full py-24 overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 opacity-20 pointer-events-none hidden lg:block">
          <svg viewBox="0 0 100 200" className="w-full h-full text-[#FF7639]">
@@ -102,7 +102,7 @@ export default function TechnologySection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-gray-900"
+            className="text-3xl md:text-5xl font-bold text-slate-950 dark:text-white"
           >
             Tools & <span className="text-[#FF7639]">Technology</span>
           </motion.h2>
@@ -126,7 +126,7 @@ export default function TechnologySection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className={`relative rounded-2xl p-6 ${tool.bgColor} border border-gray-50 shadow-sm overflow-hidden group`}
+              className={`relative rounded-2xl p-6 ${tool.bgColor} border border-gray-50 dark:border-slate-700 shadow-sm dark:bg-slate-900/90 overflow-hidden group`}
             >
               {/* Left Side Accent Border */}
               <div 
@@ -135,10 +135,10 @@ export default function TechnologySection() {
               />
 
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center p-2 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center p-2 group-hover:scale-110 transition-transform">
                    {tool.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">{tool.name}</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{tool.name}</h3>
               </div>
 
               {/* Progress Bar */}

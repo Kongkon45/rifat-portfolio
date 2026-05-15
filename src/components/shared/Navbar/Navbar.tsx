@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -17,6 +17,23 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const initialTheme = storedTheme === "dark" ? "dark" : "light";
+    setTheme(initialTheme);
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -63,7 +80,7 @@ export default function Navbar() {
       animate="visible"
       variants={navVariants}
     >
-      <div className="w-full max-w-6xl bg-gradient-to-r from-orange-400 to-orange-500 rounded-full px-6 py-3 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 relative backdrop-blur-sm border border-white/10">
+      <div className="w-full max-w-6xl bg-gradient-to-r from-orange-400 to-orange-500 dark:bg-slate-950/95 rounded-full px-6 py-3 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 relative backdrop-blur-sm border border-white/10 dark:border-slate-700 text-slate-950 dark:text-slate-100">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -83,7 +100,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <motion.div
-          className="hidden md:flex items-center gap-8 text-white font-medium"
+          className="hidden md:flex items-center gap-8 text-slate-950 dark:text-white font-medium"
           initial="hidden"
           animate="visible"
         >
@@ -96,7 +113,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="relative group text-white text-sm font-semibold"
+                className="relative group text-slate-950 dark:text-white text-sm font-semibold"
               >
                 {item.name}
                 <motion.div
@@ -115,6 +132,17 @@ export default function Navbar() {
           animate="visible"
           transition={{ delay: 0.3 }}
         >
+          <motion.button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            className="h-10 w-10 grid place-items-center rounded-full bg-slate-900/10 text-slate-900 dark:bg-slate-200 dark:text-slate-950 shadow-lg hover:bg-slate-900/20 dark:hover:bg-slate-200/30 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {mounted ? (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />) : <Moon size={18} />}
+          </motion.button>
+
           <Link href="#contact">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="h-10 hidden md:block bg-purple-500 hover:bg-purple-600 text-white rounded-full px-7 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
@@ -126,7 +154,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <motion.button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors"
+            className="md:hidden text-slate-900 dark:text-slate-100 bg-white/10 dark:bg-slate-800/80 p-2 rounded-full hover:bg-white/20 dark:hover:bg-slate-700/70 transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -137,7 +165,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {open && (
           <motion.div
-            className="absolute top-[70px] left-3 right-3 bg-gradient-to-b from-orange-400 to-orange-500 rounded-2xl p-6 flex flex-col gap-4 text-white md:hidden shadow-lg backdrop-blur-sm border border-white/10"
+            className="absolute top-[70px] left-3 right-3 bg-white/95 dark:bg-slate-900/95 rounded-2xl p-6 flex flex-col gap-4 text-slate-900 dark:text-slate-100 md:hidden shadow-lg backdrop-blur-sm border border-slate-200/70 dark:border-slate-700"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
@@ -154,7 +182,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="text-white text-sm font-semibold pb-3 border-b border-white/20 hover:text-purple-100 transition-colors"
+                  className="text-slate-950 dark:text-slate-100 text-sm font-semibold pb-3 border-b border-slate-200/70 dark:border-slate-700 hover:text-purple-700 dark:hover:text-purple-200 transition-colors"
                 >
                   {item.name}
                 </Link>

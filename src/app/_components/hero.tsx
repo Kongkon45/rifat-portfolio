@@ -7,7 +7,7 @@ import {
   FaDribbble,
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { BsInstagram } from "react-icons/bs";
+// import { BsInstagram } from "react-icons/bs";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -18,7 +18,7 @@ const iconList = [
   { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4" },
   { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56" },
   { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1" },
-  { icon: <BsInstagram key="ig" />, label: "Instagram", bgColor: "#E4405F", hoverBgColor: "#c81e58" },
+  // { icon: <BsInstagram key="ig" />, label: "Instagram", bgColor: "#E4405F", hoverBgColor: "#c81e58" },
   { icon: <FaDribbble key="db" />, label: "Dribbble", bgColor: "#EA4C89", hoverBgColor: "#d93d78" },
 ];
 
@@ -99,7 +99,7 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="w-full flex justify-center mt-16 px-4 relative pb-24 md:pb-32"
+      className="w-full flex justify-center mt-16 px-4 relative pb-24 md:pb-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -110,7 +110,7 @@ const HeroSection = () => {
         {/* LEFT CONTENT */}
         <motion.div className="space-y-5" variants={fadeUp}>
           <motion.div
-            className="inline-block px-4 py-1 bg-green-100 text-green-600 text-xs rounded-full shadow-lg"
+            className="inline-block px-4 py-1 bg-green-100 text-green-600 text-xs rounded-full shadow-lg dark:bg-emerald-900 dark:text-emerald-200"
             variants={badgeFromTop}
             whileHover={{
               scale: 1.05,
@@ -121,11 +121,11 @@ const HeroSection = () => {
             ✨ Available for freelance
           </motion.div>
 
-          <motion.p className="text-gray-600 text-lg md:text-xl lg:text-2xl font-semibold leading-normal" variants={fadeUp}>
+          <motion.p className="text-slate-600 dark:text-slate-300 text-lg md:text-xl lg:text-2xl font-semibold leading-normal" variants={fadeUp}>
             Hi, I am
           </motion.p>
 
-          <motion.h1 className="text-4xl md:text-5xl font-bold" variants={fadeUp}>
+          <motion.h1 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white" variants={fadeUp}>
             Rifat Hossain
           </motion.h1>
 

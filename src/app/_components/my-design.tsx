@@ -65,7 +65,7 @@ const steps: Step[] = [
 
 export default function MyDesignSection() {
   return (
-    <section id="case-study" className="relative w-full py-24 overflow-hidden bg-white">
+    <section id="case-study" className="relative w-full py-24 overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         {/* Left Wavy Line */}
@@ -100,7 +100,7 @@ export default function MyDesignSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold font-poppins text-gray-900 tracking-tight"
+            className="text-3xl md:text-5xl font-bold font-poppins text-slate-950 dark:text-white tracking-tight"
           >
             My Design <span className="text-[#FF7639]">Process</span>
           </motion.h2>
@@ -108,7 +108,7 @@ export default function MyDesignSection() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            className="h-[3px] w-24 bg-gray-200 mx-auto mt-4 rounded-full relative overflow-hidden"
+            className="h-[3px] w-24 bg-gray-200 dark:bg-slate-800 mx-auto mt-4 rounded-full relative overflow-hidden"
           >
              <motion.div 
               initial={{ x: "-100%" }}
@@ -122,7 +122,7 @@ export default function MyDesignSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-600 mt-6 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-300 mt-6 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium"
           >
             A structured, iterative approach that ensures every design decision is intentional and user-validated
           </motion.p>
@@ -136,7 +136,7 @@ export default function MyDesignSection() {
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1.5px] bg-gray-100 md:-translate-x-1/2"
+            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1.5px] bg-gray-100 dark:bg-slate-800 md:-translate-x-1/2"
           />
 
           <div className="space-y-16 md:space-y-0">
@@ -199,13 +199,13 @@ function StepContent({ step, isLeft, isMobile = false }: { step: Step, isLeft: b
       transition={{ duration: 0.5, delay: 0.1 }}
       className={`max-w-xs md:max-w-sm ${alignmentClass} group`}
     >
-      <h4 className="text-2xl md:text-3xl font-bold block mb-1 text-gray-900 leading-none">
+      <h4 className="text-2xl md:text-3xl font-bold block mb-1 text-slate-950 dark:text-white leading-none">
         {step.number}
       </h4>
-      <h3 className="text-lg md:text-xl font-bold mb-2 font-poppins text-gray-800 group-hover:text-[#FF7639] transition-colors">
+      <h3 className="text-lg md:text-xl font-bold mb-2 font-poppins text-slate-900 dark:text-slate-100 group-hover:text-[#FF7639] transition-colors">
         {step.title}
       </h3>
-      <p className="text-gray-500 text-xs md:text-sm leading-snug font-medium">
+      <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm leading-snug font-medium">
         {step.desc}
       </p>
     </motion.div>
