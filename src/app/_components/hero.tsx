@@ -99,7 +99,7 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="w-full flex justify-center mt-16 px-4 relative pb-24 md:pb-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+      className="w-full flex justify-center pt-6 md:pt-8 px-4 relative pb-24 md:pb-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
