@@ -14,8 +14,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full py-20 overflow-hidden bg-gradient-to-b from-white via-[#FDFDFA] to-[#F2F9F2] dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      <div className="container mx-auto px-4 max-w-3xl text-center text-slate-900 dark:text-slate-100">
+    <footer className="site-section relative w-full overflow-hidden bg-gradient-to-b from-white via-[#FDFDFA] to-[#F2F9F2] dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      <div className="site-container container mx-auto px-4 max-w-3xl text-center text-slate-900 dark:text-slate-100">
         
         {/* Main Heading */}
         <motion.div
@@ -24,10 +24,10 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-950 dark:text-slate-100 tracking-tight">
+          <h2 className="site-heading tracking-tight">
             Let&apos;s Create Something
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-[#FF7639] mt-2">
+          <h3 className="site-heading text-[#FF7639] mt-3">
             Extraordinary
           </h3>
         </motion.div>
@@ -87,7 +87,7 @@ const Footer = () => {
         >
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Link href="#contact">
-            <Button className="bg-[#FF7639] hover:bg-[#E6652D] text-white font-bold text-lg px-12 py-6 rounded-xl shadow-lg shadow-orange-100 w-[260px]">
+            <Button className="bg-[#FF7639] hover:bg-[#E6652D] text-white font-bold text-base md:text-lg px-12 py-5 md:py-6 rounded-xl shadow-lg shadow-orange-100 w-[260px]">
               Hire Me
             </Button>
             </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               variant="outline"
-              className="border-[#D4C4FF] text-[#8A63E5] hover:bg-[#F5F2FF] dark:border-slate-700 dark:text-slate-100 dark:hover:bg-white/10 font-bold text-lg px-10 py-6 rounded-xl border-2 w-[260px] flex items-center justify-center gap-2"
+              className="border-[#D4C4FF] text-[#8A63E5] hover:bg-[#F5F2FF] dark:border-slate-700 dark:text-slate-100 dark:hover:bg-white/10 font-bold text-base md:text-lg px-10 py-5 md:py-6 rounded-xl border-2 w-[260px] flex items-center justify-center gap-2"
             >
               Download Resume <LuDownload className="w-5 h-5" />
             </Button>

@@ -65,7 +65,7 @@ const steps: Step[] = [
 
 export default function MyDesignSection() {
   return (
-    <section id="case-study" className="relative w-full py-24 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="case-study" className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         {/* Left Wavy Line */}
@@ -93,14 +93,14 @@ export default function MyDesignSection() {
         />
       </div>
 
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="site-container container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold font-poppins text-slate-950 dark:text-white tracking-tight"
+            className="site-heading font-poppins text-slate-950 dark:text-white tracking-tight"
           >
             My Design <span className="text-[#FF7639]">Process</span>
           </motion.h2>

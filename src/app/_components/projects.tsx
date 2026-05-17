@@ -88,7 +88,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div className="h-[95vh]  w-full flex items-center  justify-center sticky top-0">
+    <div className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
       <motion.div
         style={{
           scale,
@@ -96,9 +96,9 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[440px] px-6 shadow-lg dark:shadow-2xl">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[440px] px-6 shadow-lg dark:shadow-2xl ">
           {/* Image */}
-          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] min-h-[200px] bg-slate-50 dark:bg-slate-800">
+          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[150px] md:min-h-[200px] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`}>
               <Image
                 src={project.image?.[0]?.url || "/placeholder.svg"}
@@ -110,17 +110,17 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
           </div>
 
           {/* Content */}
-          <div className="flex flex-col flex-1 p-6 md:p-10 text-slate-900 dark:text-slate-100">
-            <CardHeader className="p-0 mb-6">
-              <CardTitle className="text-slate-900 dark:text-white text-3xl font-bold mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <div className="flex flex-col flex-1 p-1 md:p-6 lg:p-8 xl:p-10 text-slate-900 dark:text-slate-100 ">
+            <CardHeader className="p-0 mb-5">
+              <CardTitle className="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {project.title}
               </CardTitle>
-              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-3 md:line-clamp-4 text-base leading-relaxed">
+              <CardDescription className="text-slate-600 dark:text-slate-300 line-clamp-2 md:line-clamp-4 text-sm md:text-base leading-relaxed">
                 {project.description}
               </CardDescription>
             </CardHeader>
 
-            <CardContent className="p-0 mt-auto space-y-6">
+            <CardContent className="p-0 mt-auto space-y-4">
               <div className="flex flex-wrap gap-2">
                 {project.technologies?.slice(0, 4).map((tech: string, i: number) => (
                   <span key={i} className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-slate-100 dark:bg-white/5 text-blue-600 dark:text-blue-400 border border-slate-300 dark:border-white/10 rounded-lg">
@@ -130,12 +130,12 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               </div>
 
               <div className="flex gap-4">
-                <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-12">
+                <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
                   <a href={project.githubLink || "#"} target="_blank" rel="noopener noreferrer">
                     <FaGithub className="mr-2 h-4 w-4" /> Code
                   </a>
                 </Button>
-                <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-12 shadow-lg shadow-blue-500/10">
+                <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
                   <a href={project.liveLink || "#"} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" /> Live
                   </a>
@@ -164,18 +164,18 @@ export default function ProjectsSection(): JSX.Element {
     <section
       ref={containerRef}
       id="projects"
-      className="relative bg-white dark:bg-[#030712] w-full"
+      className="site-section relative bg-white dark:bg-[#030712] w-full"
     >
 
       
      
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center pt-2">
            <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-slate-950 dark:text-white"
+            className="site-heading text-slate-950 dark:text-white"
           >
             Featured <span className="text-[#FF7639]">Projects</span>
           </motion.h2>
@@ -189,7 +189,7 @@ export default function ProjectsSection(): JSX.Element {
           </motion.div>
         </div>
 
-      <div className="relative w-full">
+      <div className="relative w-full ">
         {isLoading ? (
           <div className="h-screen flex items-center justify-center px-8">
             <div className="h-[480px] w-full max-w-5xl bg-white/5 rounded-[2.5rem] animate-pulse" />
@@ -199,8 +199,8 @@ export default function ProjectsSection(): JSX.Element {
             Unable to load projects.
           </div>
         ) : (
-          <div className="flex flex-col items-center">
-            {projects.map((project: Project, index: number) => (
+          <div className="flex flex-col items-center ">
+            {projects?.map((project: Project, index: number) => (
               <ProjectCard
                 key={project._id || index}
                 index={index}
@@ -212,9 +212,6 @@ export default function ProjectsSection(): JSX.Element {
           </div>
         )}
       </div>
-
-      {/* Extra space at the bottom to allow the last card to stick for a bit */}
-      {/* <div className="h-[20vh]" /> */}
     </section>
   );
 }

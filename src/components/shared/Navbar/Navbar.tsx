@@ -80,7 +80,7 @@ export default function Navbar() {
       animate="visible"
       variants={navVariants}
     >
-      <div className="w-full max-w-6xl bg-gradient-to-r from-orange-400 to-orange-500 dark:bg-slate-950/95 rounded-full px-6 py-3 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 relative backdrop-blur-sm border border-white/10 dark:border-slate-700 text-slate-950 dark:text-slate-100">
+      <div className="site-container w-full max-w-6xl bg-gradient-to-r from-orange-400 to-orange-500 dark:bg-slate-950/95 rounded-full px-6 py-3 flex items-center justify-between shadow-lg hover:shadow-xl transition-shadow duration-300 relative backdrop-blur-sm border border-white/10 dark:border-slate-700 text-slate-950 dark:text-slate-100">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}

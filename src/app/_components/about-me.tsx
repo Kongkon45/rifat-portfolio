@@ -67,7 +67,7 @@ const AboutMeSection = () => {
   return (
     <motion.section
       id="about"
-      className="w-full bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden"
+      className="site-section w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -75,7 +75,7 @@ const AboutMeSection = () => {
     >
       <div className="mx-auto max-w-7xl">
         {/* Top Section: Illustration and Text */}
-        <div className="grid gap-12 lg:grid-cols-2 items-center mb-20">
+        <div className="grid gap-12 lg:grid-cols-2 items-center mb-10">
           
           {/* Left: Illustration with Floating Elements */}
           <motion.div variants={fadeIn} className="relative flex justify-center items-center">
@@ -156,14 +156,14 @@ const AboutMeSection = () => {
           {/* Right: Text Content */}
           <motion.div variants={fadeIn} className="space-y-8">
             <div className="relative inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white">
+              <h2 className="site-heading">
                 About <span className="text-orange-500">Me</span>
               </h2>
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500/50 to-violet-500/50 rounded-full" />
             </div>
 
-            <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-8 md:p-12 shadow-sm">
-              <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed md:text-xl">
+            <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-5 md:p-8 lg:p-12 shadow-sm">
+              <p className="text-slate-600 dark:text-slate-300 text-[15px] text-justify md:text-lg leading-relaxed xl:text-xl">
                 I&apos;m a passionate UI/UX Designer who solves real-world problems through user-centered design. I focus on creating simple, intuitive, and visually engaging digital experiences. By understanding user behavior and business goals, I design solutions that not only look good but also deliver meaningful results. I&apos;m always exploring new ideas and refining my process to create better, more impactful designs.
               </p>
             </div>
@@ -173,7 +173,7 @@ const AboutMeSection = () => {
         {/* Bottom Section: Stats Grid */}
         <motion.div 
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 "
         >
           {stats.map((item, index) => {
             const Icon = item.icon;

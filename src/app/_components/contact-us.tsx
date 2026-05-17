@@ -13,13 +13,13 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const ContactUsSection = () => {
   return (
-    <section id="contact" className="relative w-full py-10 md:py-14 overflow-hidden bg-[#F8FAFC] dark:bg-slate-950">
+    <section id="contact" className="site-section relative w-full overflow-hidden bg-[#F8FAFC] dark:bg-slate-950">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-green-50/50 blur-[100px] rounded-full" />
       </div>
 
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="site-container container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           
           {/* LEFT SIDE: Avatar & Visuals */}
@@ -105,7 +105,7 @@ const ContactUsSection = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Button className="w-full h-14 bg-[#FF7E47] hover:bg-[#F26D35] text-white text-lg font-bold rounded-xl shadow-lg shadow-orange-100 transition-all duration-300">
+                <Button className="w-full h-11 md:h-12 lg:h-14 bg-[#FF7E47] hover:bg-[#F26D35] text-white text-lg font-bold rounded-xl shadow-lg shadow-orange-100 transition-all duration-300">
                   Contact Me
                 </Button>
               </form>
