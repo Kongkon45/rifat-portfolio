@@ -87,7 +87,7 @@ const tools: Tool[] = [
 
 export default function TechnologySection() {
   return (
-    <section id="technology" className="relative w-full py-24 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="technology" className=" relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 opacity-20 pointer-events-none hidden lg:block">
          <svg viewBox="0 0 100 200" className="w-full h-full text-[#FF7639]">
@@ -95,14 +95,14 @@ export default function TechnologySection() {
          </svg>
       </div>
 
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="site-container container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-slate-950 dark:text-white"
+            className="site-heading text-slate-950 dark:text-white"
           >
             Tools & <span className="text-[#FF7639]">Technology</span>
           </motion.h2>

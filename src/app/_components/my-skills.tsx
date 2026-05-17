@@ -99,21 +99,20 @@ const MySkillsSection = () => {
   return (
     <section
       id="my-skills"
-      className="w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 py-24 px-6 overflow-hidden"
+      className="site-section w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 px-6 overflow-hidden"
     >
       <div className="mx-auto max-w-6xl">
 
         {/* Heading */}
         <motion.div
-          className="mb-16 flex flex-col items-center gap-3 text-center"
+          className="mb-10 flex flex-col items-center gap-3 text-center"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.5 }}
           variants={headingVariants}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white">
-            My{" "}
-            <span className="text-orange-500 italic">Skills</span>
+          <h2 className="site-heading">
+            My <span className="text-orange-500 italic">Skills</span>
           </h2>
           <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
         </motion.div>
@@ -141,7 +140,7 @@ const MySkillsSection = () => {
                     relative flex flex-col h-full rounded-2xl bg-white dark:bg-slate-900
                     border border-slate-100 dark:border-slate-700 border-b-4 ${config.border}
                     shadow-md hover:shadow-xl ${config.glow}
-                    transition-shadow duration-300 p-7
+                    transition-shadow duration-300 p-5 md:p-6 lg:p-7
                     overflow-hidden
                   `}
                 >

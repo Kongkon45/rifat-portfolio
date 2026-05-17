@@ -5,6 +5,7 @@ import {
   FaFacebookF,
   FaLinkedinIn,
   FaDribbble,
+  FaBehance,
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 // import { BsInstagram } from "react-icons/bs";
@@ -18,7 +19,7 @@ const iconList = [
   { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4" },
   { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56" },
   { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1" },
-  // { icon: <BsInstagram key="ig" />, label: "Instagram", bgColor: "#E4405F", hoverBgColor: "#c81e58" },
+  { icon: <FaBehance key="behance" />, label: "Behance", bgColor: "#053EFF", hoverBgColor: "#0525D8" },
   { icon: <FaDribbble key="db" />, label: "Dribbble", bgColor: "#EA4C89", hoverBgColor: "#d93d78" },
 ];
 
@@ -99,7 +100,7 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="w-full flex justify-center pt-6 md:pt-8 px-4 relative pb-24 md:pb-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+      className="site-section w-full flex justify-center px-4 relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
@@ -125,7 +126,7 @@ const HeroSection = () => {
             Hi, I am
           </motion.p>
 
-          <motion.h1 className="text-4xl md:text-5xl font-bold text-slate-950 dark:text-white" variants={fadeUp}>
+          <motion.h1 className="site-heading text-slate-950 dark:text-white" variants={fadeUp}>
             Rifat Hossain
           </motion.h1>
 
@@ -175,7 +176,7 @@ const HeroSection = () => {
           <motion.div className="flex flex-wrap gap-4 pt-3" variants={fadeUp}>
             <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
               <Link href="#contact">
-              <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-11 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button className="bg-orange-500 hover:bg-orange-600 rounded-md px-8 h-10 md:h-11 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300">
                 Hire Me
               </Button>
               </Link>
@@ -184,7 +185,7 @@ const HeroSection = () => {
             <motion.div whileHover={buttonHover} whileTap={{ scale: 0.98 }}>
               <Button
                 variant="outline"
-                className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white rounded-md px-8 h-10 md:h-11 font-bold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Resume <Download className="w-6 h-6 "/>
               </Button>
