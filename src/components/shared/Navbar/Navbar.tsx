@@ -132,6 +132,13 @@ export default function Navbar() {
           animate="visible"
           transition={{ delay: 0.3 }}
         >
+            <Link href="#contact">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="h-10 hidden md:block bg-purple-500 hover:bg-purple-600 text-white rounded-full px-7 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                Hire Me
+              </Button>
+            </motion.div>
+          </Link>
           <motion.button
             type="button"
             onClick={toggleTheme}
@@ -143,13 +150,7 @@ export default function Navbar() {
             {mounted ? (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />) : <Moon size={18} />}
           </motion.button>
 
-          <Link href="#contact">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="h-10 hidden md:block bg-purple-500 hover:bg-purple-600 text-white rounded-full px-7 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Hire Me
-              </Button>
-            </motion.div>
-          </Link>
+        
 
           {/* Mobile Toggle */}
           <motion.button
@@ -200,6 +201,7 @@ export default function Navbar() {
                 </Button>
               </Link>
             </motion.div>
+
           </motion.div>
         )}
       </div>

@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { LuDownload } from "react-icons/lu";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -85,9 +86,11 @@ const Footer = () => {
           className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-12"
         >
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Link href="#contact">
             <Button className="bg-[#FF7639] hover:bg-[#E6652D] text-white font-bold text-lg px-12 py-6 rounded-xl shadow-lg shadow-orange-100 w-[260px]">
               Hire Me
             </Button>
+            </Link>
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
