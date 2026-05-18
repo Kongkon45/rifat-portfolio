@@ -65,7 +65,7 @@ const steps: Step[] = [
 
 export default function MyDesignSection() {
   return (
-    <section id="case-study" className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950">
+    <section id="case-study" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         {/* Left Wavy Line */}
