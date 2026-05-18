@@ -13,10 +13,30 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const ContactUsSection = () => {
   return (
-    <section id="contact" className="site-section relative w-full overflow-hidden bg-[#F8FAFC] dark:bg-slate-950">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-green-50/50 blur-[100px] rounded-full" />
+    <section id="contact" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950 site-section">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+        <motion.svg
+          initial={{ pathLength: 0, opacity: 0 }}
+          whileInView={{ pathLength: 1, opacity: 0.1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          className="absolute left-[-40px] top-40 h-[90%] w-64 hidden lg:block"
+          viewBox="0 0 100 1000"
+          fill="none"
+          stroke="#FF7639"
+          strokeWidth="1.5"
+        >
+          <path d="M50 0 C 100 150 0 300 50 450 C 100 600 0 750 50 900 C 100 1050 0 1200 50 1350" />
+        </motion.svg>
+
+        <div
+          className="absolute right-10 top-40 w-48 h-80 opacity-15 hidden lg:block"
+          style={{
+            backgroundImage: 'radial-gradient(#8A63E5 1.5px, transparent 1.5px)',
+            backgroundSize: '20px 20px',
+          }}
+        />
       </div>
 
       <div className="site-container container mx-auto px-4 relative z-10">
