@@ -87,7 +87,7 @@ const tools: Tool[] = [
 
 export default function TechnologySection() {
   return (
-    <section id="technology" className=" relative w-full overflow-hidden bg-white dark:bg-slate-950">
+    <section id="technology" className="py-3 md:py-5 relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decoration */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-64 opacity-20 pointer-events-none hidden lg:block">
          <svg viewBox="0 0 100 200" className="w-full h-full text-[#FF7639]">

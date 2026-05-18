@@ -136,21 +136,26 @@ export default function MyDesignSection() {
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1.5px] bg-gray-100 dark:bg-slate-800 md:-translate-x-1/2"
+            className="absolute left-1/2 top-0 bottom-0 w-[1.5px] bg-gray-100 dark:bg-slate-800 -translate-x-1/2"
           />
 
-          <div className="space-y-16 md:space-y-0">
+          <div className="space-y-1">
             {steps.map((step, index) => {
               const isLeft = index % 2 === 0;
               return (
-                <div key={index} className="relative flex flex-col md:flex-row items-start md:items-center py-8 md:py-10">
-                  {/* Left Side (Desktop) */}
-                  <div className={`hidden md:flex w-1/2 ${isLeft ? "justify-end pr-16 lg:pr-20" : "invisible"}`}>
-                    {isLeft && <StepContent step={step} isLeft={isLeft} />}
+                <div key={index} className="relative grid grid-cols-2 gap-4 items-center py-1 md:py-4">
+                  {/* Left Side */}
+                  <div className={`flex ${isLeft ? "justify-end pr-5 lg:pr-10" : "justify-start"}`}>
+                    {isLeft ? <StepContent step={step} isLeft={isLeft} /> : null}
+                  </div>
+
+                  {/* Right Side */}
+                  <div className={`flex ${!isLeft ? "justify-start pl-5 md:pl-20" : "justify-end"}`}>
+                    {!isLeft ? <StepContent step={step} isLeft={isLeft} /> : null}
                   </div>
 
                   {/* Icon Node */}
-                  <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 -translate-y-0 md:-translate-y-1/2 -translate-x-1/2 z-10">
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -173,11 +178,6 @@ export default function MyDesignSection() {
                       </div>
                     </motion.div>
                   </div>
-
-                  {/* Right Side (Desktop / Mobile) */}
-                  <div className={`w-full md:w-1/2 pl-20 md:pl-20 ${!isLeft ? "flex justify-start" : "md:hidden"}`}>
-                    <StepContent step={step} isLeft={isLeft} isMobile={!(!isLeft)} />
-                  </div>
                 </div>
               );
             })}
@@ -187,9 +187,9 @@ export default function MyDesignSection() {
     </section>
   );
 }
-function StepContent({ step, isLeft, isMobile = false }: { step: Step, isLeft: boolean, isMobile?: boolean }) {
-  const alignmentClass = isLeft && !isMobile ? "text-right" : "text-left";
-  const animationX = isLeft && !isMobile ? -20 : 20;
+function StepContent({ step, isLeft }: { step: Step, isLeft: boolean }) {
+  const alignmentClass = isLeft ? "text-right" : "text-left";
+  const animationX = isLeft ? -20 : 20;
 
   return (
     <motion.div 
