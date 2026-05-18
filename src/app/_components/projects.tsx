@@ -88,7 +88,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
+    <div id="project" className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
       <motion.div
         style={{
           scale,

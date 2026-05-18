@@ -20,7 +20,7 @@ export default function AnimatedThemeToggler({
       onClick={onToggle}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
-      className="relative grid h-14 w-14 place-items-center rounded-full bg-[#ff7a00] shadow-lg"
+      className="relative grid h-12 md:h-14 w-12 md:w-14 place-items-center rounded-full bg-[#ff7a00] shadow-lg"
       whileTap={{ scale: 0.96 }}
       whileHover={{ scale: 1.04 }}
     >
