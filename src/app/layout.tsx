@@ -7,6 +7,7 @@ import { Poppins } from "next/font/google";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import ScrollProgressBar from "@/components/providers/ScrollProgressBar";
 import ScrollToTopComponent from "@/components/providers/ScrollToTop";
+import ContactFab from "@/components/shared/ContactFab/ContactFab";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
+          <ContactFab />
           <ScrollToTopComponent/>
           <Footer />
         </SmoothScrollProvider>

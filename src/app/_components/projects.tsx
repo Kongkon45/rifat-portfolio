@@ -88,7 +88,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
+    <div id="project" className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
       <motion.div
         style={{
           scale,
@@ -96,9 +96,9 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
         }}
         className="relative w-full container origin-top px-4"
       >
-        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[440px] px-6 shadow-lg dark:shadow-2xl ">
+        <Card className="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-500 rounded-[2rem] overflow-hidden flex flex-col md:flex-row h-fit md:h-[340px] px-6 shadow-lg dark:shadow-2xl ">
           {/* Image */}
-          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[150px] md:min-h-[200px] bg-slate-50 dark:bg-slate-800">
+          <div className="relative w-full md:w-1/2 overflow-hidden rounded-[1.3rem] h-[150px] md:min-h-[300px] bg-slate-50 dark:bg-slate-800">
             <Link href={`/project/${project._id}`}>
               <Image
                 src={project.image?.[0]?.url || "/placeholder.svg"}
@@ -129,7 +129,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 pt-1 md:pt-4">
                 <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
                   <a href={project.githubLink || "#"} target="_blank" rel="noopener noreferrer">
                     <FaGithub className="mr-2 h-4 w-4" /> Code
