@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedThemeToggler from "@/components/ui/animated-theme-toggler";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -22,9 +23,18 @@ export default function Navbar() {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    const initialTheme = storedTheme === "dark" ? "dark" : "light";
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme =
+      storedTheme === "dark" || storedTheme === "light"
+        ? (storedTheme as "light" | "dark")
+        : prefersDark
+          ? "dark"
+          : "light";
     setTheme(initialTheme);
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    document.documentElement.style.colorScheme = initialTheme;
     setMounted(true);
   }, []);
 
@@ -33,6 +43,7 @@ export default function Navbar() {
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    document.documentElement.style.colorScheme = nextTheme;
   };
 
   const navVariants = {
@@ -139,16 +150,7 @@ export default function Navbar() {
               </Button>
             </motion.div>
           </Link>
-          <motion.button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="h-10 w-10 grid place-items-center rounded-full bg-slate-900/10 text-slate-900 dark:bg-slate-200 dark:text-slate-950 shadow-lg hover:bg-slate-900/20 dark:hover:bg-slate-200/30 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {mounted ? (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />) : <Moon size={18} />}
-          </motion.button>
+          {mounted && <AnimatedThemeToggler theme={theme} onToggle={toggleTheme} />}
 
         
 

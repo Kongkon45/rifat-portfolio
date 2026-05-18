@@ -131,7 +131,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.h2
-            className="h-[52px] text-4xl md:text-5xl lg:text-6xl font-bold leading-normal bg-gradient-to-r from-orange-500 to-purple-500 text-transparent bg-clip-text"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-normal bg-gradient-to-r from-orange-500 to-purple-500 text-transparent bg-clip-text"
             variants={fadeUp}
           >
             {currentText}

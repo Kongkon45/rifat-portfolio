@@ -25,6 +25,30 @@ body {
   @apply min-h-screen bg-white text-slate-900 antialiased transition-colors duration-300;
 }
 
+html,
+body,
+section,
+header,
+footer,
+main,
+nav,
+div {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  section,
+  header,
+  footer,
+  main,
+  nav,
+  div {
+    transition: none !important;
+  }
+}
+
 html.dark body {
   @apply bg-slate-950 text-slate-100;
 }
