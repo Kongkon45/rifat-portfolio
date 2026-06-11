@@ -133,13 +133,15 @@ const ContactUsSection = () => {
               {/* Social Links */}
               <div className="flex items-center gap-4 mt-8">
                 {[
-                  { icon: <FaFacebookF className="w-5 h-5" />, color: "bg-[#1877F2]", shadow: "shadow-blue-100" },
-                  { icon: <IoLogoWhatsapp className="w-6 h-6" />, color: "bg-[#25D366]", shadow: "shadow-green-100" },
-                  { icon: <FaLinkedinIn className="w-5 h-5" />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100" },
+                  { icon: <FaFacebookF className="w-5 h-5" />, color: "bg-[#1877F2]", shadow: "shadow-blue-100", link:"https://www.facebook.com/rifatarman22" },
+                  { icon: <IoLogoWhatsapp className="w-6 h-6" />, color: "bg-[#25D366]", shadow: "shadow-green-100", link:"https://wa.me/8801843-034201" },
+                  { icon: <FaLinkedinIn className="w-5 h-5" />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100", link:"https://www.linkedin.com/in/rifat-hossain82" },
                 ].map((item, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center shadow-md ${item.shadow} transition-all`}
                   >
