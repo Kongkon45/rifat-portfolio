@@ -59,15 +59,17 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex justify-center gap-4 mt-6">
             {[
-              { icon: <FaFacebookF />, color: "bg-[#1877F2]", shadow: "shadow-blue-100" },
-              { icon: <IoLogoWhatsapp />, color: "bg-[#25D366]", shadow: "shadow-green-100" },
-              { icon: <FaLinkedinIn />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100" },
-              { icon: <FaBehance />, color: "bg-[#053EFF]", shadow: "shadow-blue-100" },
-              { icon: <FaDribbble />, color: "bg-[#EA4C89]", shadow: "shadow-pink-100" },
+              { icon: <FaFacebookF />, color: "bg-[#1877F2]", shadow: "shadow-blue-100", link:"https://www.facebook.com/rifatarman22" },
+              { icon: <IoLogoWhatsapp />, color: "bg-[#25D366]", shadow: "shadow-green-100", link:"https://wa.me/8801843-034201" },
+              { icon: <FaLinkedinIn />, color: "bg-[#0A66C2]", shadow: "shadow-blue-100", link:"https://www.linkedin.com/in/rifat-hossain82" },
+              { icon: <FaBehance />, color: "bg-[#053EFF]", shadow: "shadow-blue-100", link:"https://www.behance.net/rifatarman1" },
+              { icon: <FaDribbble />, color: "bg-[#EA4C89]", shadow: "shadow-pink-100", link:"https://dribbble.com/rifatarman82" },
             ].map((item, i) => (
               <motion.a
                 key={i}
-                href="#"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 className={`w-12 h-12 rounded-full ${item.color} text-white flex items-center justify-center shadow-lg ${item.shadow} border-2 border-white transition-all`}
               >

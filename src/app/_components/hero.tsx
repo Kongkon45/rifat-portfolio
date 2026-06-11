@@ -16,11 +16,11 @@ import Link from "next/link";
 import { Download } from "lucide-react";
 
 const iconList = [
-  { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4" },
-  { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56" },
-  { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1" },
-  { icon: <FaBehance key="behance" />, label: "Behance", bgColor: "#053EFF", hoverBgColor: "#0525D8" },
-  { icon: <FaDribbble key="db" />, label: "Dribbble", bgColor: "#EA4C89", hoverBgColor: "#d93d78" },
+  { icon: <FaFacebookF key="fb" />, label: "Facebook", bgColor: "#1877F2", hoverBgColor: "#155db4", link:"https://www.facebook.com/rifatarman22" },
+  { icon: <IoLogoWhatsapp key="wa" />, label: "WhatsApp", bgColor: "#25D366", hoverBgColor: "#1eae56", link:"https://wa.me/8801843-034201" },
+  { icon: <FaLinkedinIn key="li" />, label: "LinkedIn", bgColor: "#0A66C2", hoverBgColor: "#084fa1", link:"https://www.linkedin.com/in/rifat-hossain82" },
+  { icon: <FaBehance key="behance" />, label: "Behance", bgColor: "#053EFF", hoverBgColor: "#0525D8", link:"https://www.behance.net/rifatarman1" },
+  { icon: <FaDribbble key="db" />, label: "Dribbble", bgColor: "#EA4C89", hoverBgColor: "#d93d78", link:"https://dribbble.com/rifatarman82" },
 ];
 
 const containerVariants = {
@@ -150,6 +150,7 @@ const HeroSection = () => {
                   border: `2px solid ${item.bgColor}`,
                 }}
               >
+                <Link href={item.link} target="_blank" rel="noopener noreferrer">
                 <motion.button
                   aria-label={item.label}
                   className="absolute inset-1 lg:inset-[5px] rounded-full shadow-md flex items-center justify-center text-white transition-all duration-300 hover:shadow-lg"
@@ -168,6 +169,7 @@ const HeroSection = () => {
                 >
                   {item.icon}
                 </motion.button>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
