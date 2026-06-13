@@ -24,7 +24,6 @@ interface Project {
   description: string;
   technologies: string[];
   image: ProjectImage[];
-  githubLink: string;
   liveLink: string;
 }
 
@@ -48,7 +47,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
    {
@@ -59,7 +57,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
    {
@@ -70,7 +67,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
 ];
@@ -130,11 +126,6 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               </div>
 
               <div className="flex gap-4 pt-1 md:pt-4">
-                <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
-                  <a href={project.githubLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="mr-2 h-4 w-4" /> Code
-                  </a>
-                </Button>
                 <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
                   <a href={project.liveLink || "#"} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" /> Live
