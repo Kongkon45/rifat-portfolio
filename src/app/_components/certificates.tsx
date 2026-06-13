@@ -282,15 +282,6 @@ const Certificates = () => {
           >
             →
           </button>
-
-          {/* Pause / Play toggle */}
-          <button
-            onClick={() => setPaused((p) => !p)}
-            className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-            aria-label={paused ? "Play" : "Pause"}
-          >
-            {paused ? "▶" : "⏸"}
-          </button>
         </div>
       </div>
     </section>
