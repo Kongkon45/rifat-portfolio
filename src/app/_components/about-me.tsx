@@ -9,6 +9,11 @@ const fadeIn: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const headingVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -67,13 +72,13 @@ const AboutMeSection = () => {
   return (
     <motion.section
       id="about"
-      className="site-section w-full bg-white dark:bg-slate-950 px-6 overflow-hidden"
+      className="site-section w-full bg-white dark:bg-slate-950 overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={staggerContainer}
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="site-container">
         {/* Top Section: Illustration and Text */}
         <div className="grid gap-12 lg:grid-cols-2 items-center mb-10">
           
@@ -155,12 +160,19 @@ const AboutMeSection = () => {
 
           {/* Right: Text Content */}
           <motion.div variants={fadeIn} className="space-y-8">
-            <div className="relative inline-block">
+            {/* Heading */}
+            <motion.div
+              className="mb-10 flex flex-col items-center gap-3 text-center"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={headingVariants}
+            >
               <h2 className="site-heading">
-                About <span className="text-orange-500">Me</span>
+                About <span className="text-orange-500 italic">Me</span>
               </h2>
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-orange-500/50 to-violet-500/50 rounded-full" />
-            </div>
+              <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
+            </motion.div>
 
             <div className="bg-[#FFF8F6] dark:bg-slate-900 border border-orange-100/50 dark:border-slate-700 rounded-[40px] p-5 md:p-8 lg:p-12 shadow-sm">
               <p className="text-slate-600 dark:text-slate-300 text-[15px] text-justify md:text-lg leading-relaxed xl:text-xl">

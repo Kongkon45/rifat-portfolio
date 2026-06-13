@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,9 +11,14 @@ import {
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 
+const headingVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const ContactUsSection = () => {
   return (
-    <section id="contact" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950 site-section">
+    <section id="contact" className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         <motion.svg
@@ -40,6 +45,20 @@ const ContactUsSection = () => {
       </div>
 
       <div className="site-container container mx-auto px-4 relative z-10">
+        {/* Heading */}
+        <motion.div
+          className="mb-10 flex flex-col items-center gap-3 text-center"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headingVariants}
+        >
+          <h2 className="site-heading">
+            Contact <span className="text-orange-500 italic">Me</span>
+          </h2>
+          <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
+        </motion.div>
+
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           
           {/* LEFT SIDE: Avatar & Visuals */}
