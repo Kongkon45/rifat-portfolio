@@ -132,7 +132,7 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               <div className="flex gap-4 pt-1 md:pt-4">
                 <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
                   <a href={project.liveLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live
+                    <ExternalLink className="mr-2 h-4 w-4" /> Case Study
                   </a>
                 </Button>
               </div>
