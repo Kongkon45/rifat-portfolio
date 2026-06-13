@@ -4,10 +4,14 @@ import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue, Variants } from "framer-motion";
+
+const headingVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 // If you have a real `useProject` hook, remove the fallback below and import it.
 // import { useProject } from "@/hooks/ApiCall";
@@ -24,7 +28,6 @@ interface Project {
   description: string;
   technologies: string[];
   image: ProjectImage[];
-  githubLink: string;
   liveLink: string;
 }
 
@@ -48,7 +51,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
    {
@@ -59,7 +61,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
    {
@@ -70,7 +71,6 @@ const projectsFallback: Project[] = [
       "A responsive booking experience for hospitality brands with smooth room navigation, live availability, and premium user journeys.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     image: [{ url: "/assets/images/hero_bg.png" }],
-    githubLink: "#",
     liveLink: "#",
   },
 ];
@@ -88,11 +88,11 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
   const scale = useTransform(progress, [start, 1], [1, targetScale]);
 
   return (
-    <div id="project" className="h-[92vh]  w-full flex items-center  justify-center sticky top-0">
+    <div id="project" className="h-[65vh] w-full flex items-center justify-center sticky top-0">
       <motion.div
         style={{
           scale,
-          top: `calc(5vh + ${index *20}px)`,
+          top: `calc(5vh + ${index * 20}px)`,
         }}
         className="relative w-full container origin-top px-4"
       >
@@ -130,14 +130,9 @@ const ProjectCard = ({ project, index, progress, totalProjects }: { project: Pro
               </div>
 
               <div className="flex gap-4 pt-1 md:pt-4">
-                <Button asChild variant="outline" className="flex-1 bg-transparent border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 rounded-xl h-10 md:h-12">
-                  <a href={project.githubLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="mr-2 h-4 w-4" /> Code
-                  </a>
-                </Button>
                 <Button asChild className="flex-1 bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 border-none rounded-xl h-10 md:h-12 shadow-lg shadow-blue-500/10">
                   <a href={project.liveLink || "#"} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live
+                    <ExternalLink className="mr-2 h-4 w-4" /> Case Study
                   </a>
                 </Button>
               </div>
@@ -169,27 +164,21 @@ export default function ProjectsSection(): JSX.Element {
 
       
      
-        {/* Header */}
-        <div className="text-center pt-2">
-           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="site-heading text-slate-950 dark:text-white"
-          >
-            Featured <span className="text-[#FF7639]">Projects</span>
-          </motion.h2>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 100 }}
-            viewport={{ once: true }}
-            className="h-1 bg-[#8A63E5]/30 mx-auto mt-4 rounded-full relative overflow-hidden"
-          >
-             <div className="absolute inset-0 bg-[#8A63E5] w-1/2" />
-          </motion.div>
-        </div>
+        {/* Heading */}
+        <motion.div
+          className="mb-6 flex flex-col items-center gap-3 text-center pt-2"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headingVariants}
+        >
+          <h2 className="site-heading">
+            Featured <span className="text-orange-500 italic">Projects</span>
+          </h2>
+          <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
+        </motion.div>
 
-      <div className="relative w-full ">
+      <div className="relative w-full h-fit">
         {isLoading ? (
           <div className="h-screen flex items-center justify-center px-8">
             <div className="h-[480px] w-full max-w-5xl bg-white/5 rounded-[2.5rem] animate-pulse" />

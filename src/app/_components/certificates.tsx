@@ -172,9 +172,9 @@ const Certificates = () => {
   return (
     <section
       id="certificates"
-      className="site-section w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 px-6 overflow-hidden"
+      className="site-section w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 overflow-hidden"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="site-container">
         {/* Heading */}
         <motion.div
           className="mb-10 flex flex-col items-center gap-3 text-center"
@@ -281,15 +281,6 @@ const Certificates = () => {
             aria-label="Next"
           >
             →
-          </button>
-
-          {/* Pause / Play toggle */}
-          <button
-            onClick={() => setPaused((p) => !p)}
-            className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-            aria-label={paused ? "Play" : "Pause"}
-          >
-            {paused ? "▶" : "⏸"}
           </button>
         </div>
       </div>
