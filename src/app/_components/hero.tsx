@@ -100,7 +100,7 @@ const HeroSection = () => {
   }, []);
   return (
     <motion.section
-      className="site-section w-full flex justify-center px-4 relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+      className="site-section w-full flex justify-center relative bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   Search,
   Users,
@@ -9,6 +9,11 @@ import {
   Layers,
   Rocket,
 } from "lucide-react";
+
+const headingVariants: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 interface Step {
   number: string;
@@ -65,7 +70,7 @@ const steps: Step[] = [
 
 export default function MyDesignSection() {
   return (
-    <section id="case-study" className="pt-10 md:pt-2 pb-2 relative w-full overflow-hidden bg-white dark:bg-slate-950">
+    <section id="case-study" className="site-section relative w-full overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
         {/* Left Wavy Line */}
@@ -94,39 +99,28 @@ export default function MyDesignSection() {
       </div>
 
       <div className="site-container container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="site-heading font-poppins text-slate-950 dark:text-white tracking-tight"
-          >
-            My Design <span className="text-[#FF7639]">Process</span>
-          </motion.h2>
-          <motion.div 
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            className="h-[3px] w-24 bg-gray-200 dark:bg-slate-800 mx-auto mt-4 rounded-full relative overflow-hidden"
-          >
-             <motion.div 
-              initial={{ x: "-100%" }}
-              whileInView={{ x: "100%" }}
-              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              className="absolute inset-0 bg-[#8A63E5]"
-            />
-          </motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-slate-600 dark:text-slate-300 mt-6 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium"
-          >
-            A structured, iterative approach that ensures every design decision is intentional and user-validated
-          </motion.p>
-        </div>
+        {/* Heading */}
+        <motion.div
+          className="mb-10 flex flex-col items-center gap-3 text-center"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headingVariants}
+        >
+          <h2 className="site-heading">
+            My Design <span className="text-orange-500 italic">Process</span>
+          </h2>
+          <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-orange-400 to-violet-500" />
+        </motion.div>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-slate-600 dark:text-slate-300 mt-6 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium text-center mb-16"
+        >
+          A structured, iterative approach that ensures every design decision is intentional and user-validated
+        </motion.p>
 
         {/* Timeline Container */}
         <div className="relative">

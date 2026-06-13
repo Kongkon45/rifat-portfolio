@@ -99,9 +99,9 @@ const MySkillsSection = () => {
   return (
     <section
       id="my-skills"
-      className="site-section w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 px-6 overflow-hidden"
+      className="site-section w-full bg-gradient-to-br from-pink-50/60 via-white to-green-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 overflow-hidden"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="site-container">
 
         {/* Heading */}
         <motion.div

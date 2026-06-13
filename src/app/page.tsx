@@ -15,9 +15,9 @@ const HomePage = () => {
       <AboutMeSection/>
       <MySkillsSection/>
       <TechnologySection/>
-      <Certificates/>
       <ProjectsSection/>
       <MyDesignSection/>
+      <Certificates/>
       <ContactUsSection/>
     </div>
   )
